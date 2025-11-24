@@ -65,6 +65,10 @@ app.get("/", (req, res) => {
   res.json({ message: "Tito Ride API is running" });
 });
 
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok", message: "Tito Ride API is healthy" });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
