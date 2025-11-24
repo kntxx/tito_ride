@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 antialiased;
+    background-attachment: fixed;
+    padding-top: 80px; /* Account for fixed navbar */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+ 
+
+  /* Floating Label Animation */
+  .floating-input {
+    @apply relative;
+  }
+
+  .floating-input input:focus ~ label,
+  .floating-input input:not(:placeholder-shown) ~ label {
+    @apply -translate-y-8 text-xs text-primary-600;
+  }
+
+  .floating-input label {
+    @apply absolute left-4 top-4 text-gray-500 transition-all duration-300 pointer-events-none;
+  }
+
+  /* Glass Effect Utilities */
+  .frosted {
+    @apply backdrop-blur-2xl bg-white/30 border border-white/20;
+  }
+
+  .frosted-dark {
+    @apply backdrop-blur-2xl bg-gray-900/30 border border-white/10;
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-emerald-600;
+  }
+
+  .text-gradient-premium {
+    @apply bg-clip-text text-transparent bg-gradient-premium;
+  }
+
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-500 ease-out
+           hover:-translate-y-2 hover:shadow-premium;
+  }
+
+  /* Glow Effects */
+  .glow-ring {
+    @apply ring-4 ring-primary-400/20 ring-offset-2 ring-offset-white;
+  }
+
+  .avatar-glow {
+    @apply ring-4 ring-primary-400 ring-offset-4 ring-offset-white shadow-glow;
+  }
+
+  /* Background Patterns */
+  .bg-mesh {
+    @apply bg-gradient-mesh;
+  }
+
+  /* Scrollbar Styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gradient-green rounded-full;
+  }
+}
+
+@layer utilities {
+  .bg-size-200 {
+    background-size: 200%;
+  }
+
+  .bg-pos-0 {
+    background-position: 0%;
+  }
+
+  .bg-pos-100 {
+    background-position: 100%;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+}
